@@ -1,7 +1,7 @@
 # Made with gen AI
 
-# Import picom
-exec --no-startup-id picom --config ~/.config/picom.conf
+exec_always --no-startup-id picom --config ~/.config/picom.conf
+exec_always --no-startup-id feh --bg-scale ~/wallpapers/main.jpg
 
 # Set mod key to Mod4 (Windows key)
 set $mod Mod4
@@ -12,7 +12,11 @@ font pango:monospace 10
 # Set terminal (change if you prefer another)
 set $term kitty
 
-# Keybindings
+# Border
+default_border none
+
+# Gaps
+gaps inner 10
 
 # Open terminal
 bindsym $mod+Return exec $term
@@ -35,8 +39,8 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-bindsym $mod+s split h
-bindsym $mod+v split v
+bindsym $mod+v split h
+bindsym $mod+s split v
 
 # Move windows using Shift + hjkl
 bindsym $mod+Shift+h move left
