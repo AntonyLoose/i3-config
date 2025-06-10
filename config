@@ -95,7 +95,7 @@ bindsym $mod+Shift+space floating toggle
 # Fullscreen toggle
 bindsym $mod+f fullscreen toggle
 
-
+# i3status bar
 bar {
     status_command i3status
     colors {
