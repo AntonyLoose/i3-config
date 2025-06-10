@@ -1,6 +1,6 @@
 # Made with gen AI
 
-exec_always --no-startup-id picom --config ~/.config/picom.conf
+exec_always --no-startup-id picom
 exec_always --no-startup-id feh --bg-scale ~/wallpapers/main.jpg
 
 # Set mod key to Mod4 (Windows key)
