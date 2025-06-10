@@ -1,5 +1,6 @@
 # Made with gen AI
 
+# Import picom
 exec --no-startup-id picom --config ~/.config/picom.conf
 
 # Set mod key to Mod4 (Windows key)
@@ -7,29 +8,6 @@ set $mod Mod4
 
 # Basic setup
 font pango:monospace 10
-
-# i3 colors for window borders, backgrounds, and text
-# Use the Oxford Blue and Alice Blue mostly
-
-# Window colors
-client.focused          #0B132B #DBE9EE #DBE9EE #3A506B
-client.focused_inactive #3A506B #C0D6DF #DBE9EE #3A506B
-client.unfocused        #0B132B #0B132B #DBE9EE #3A506B
-client.urgent           #DEB9EE #DE6E6E #DBE9EE #3A506B
-
-# Workspace colors
-client.background       #0B132B
-
-# Borders
-new_window pixel 2
-new_float  pixel 2
-
-# Terminal colors (example for alacritty or kitty you can adapt)
-# foreground: #DBE9EE
-# background: #0B132B
-# cursor: #DBE9EE
-# selection_background: #3A506B
-# selection_foreground: #DBE9EE
 
 # Set terminal (change if you prefer another)
 set $term kitty
@@ -57,6 +35,8 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+bindsym $mod+s split h
+bindsym $mod+v split v
 
 # Move windows using Shift + hjkl
 bindsym $mod+Shift+h move left
