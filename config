@@ -1,0 +1,111 @@
+# Made with gen AI
+
+exec --no-startup-id picom --config ~/.config/picom.conf
+
+# Set mod key to Mod4 (Windows key)
+set $mod Mod4
+
+# Basic setup
+font pango:monospace 10
+
+# i3 colors for window borders, backgrounds, and text
+# Use the Oxford Blue and Alice Blue mostly
+
+# Window colors
+client.focused          #0B132B #DBE9EE #DBE9EE #3A506B
+client.focused_inactive #3A506B #C0D6DF #DBE9EE #3A506B
+client.unfocused        #0B132B #0B132B #DBE9EE #3A506B
+client.urgent           #DEB9EE #DE6E6E #DBE9EE #3A506B
+
+# Workspace colors
+client.background       #0B132B
+
+# Borders
+new_window pixel 2
+new_float  pixel 2
+
+# Terminal colors (example for alacritty or kitty you can adapt)
+# foreground: #DBE9EE
+# background: #0B132B
+# cursor: #DBE9EE
+# selection_background: #3A506B
+# selection_foreground: #DBE9EE
+
+# Set terminal (change if you prefer another)
+set $term kitty
+
+# Keybindings
+
+# Open terminal
+bindsym $mod+Return exec $term
+
+# Open dmenu launcher
+bindsym $mod+d exec dmenu_run
+
+# Close focused window
+bindsym $mod+Shift+q kill
+
+# Reload and restart i3
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+# Exit i3
+bindsym $mod+Shift+e exec "i3-msg exit"
+
+# Nvimesc-style navigation: use hjkl to move focus between windows
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Move windows using Shift + hjkl
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Resize windows with Ctrl + hjkl
+mode "resize" {
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+
+    # Exit resize mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Workspace switching
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# Floating toggle
+bindsym $mod+Shift+space floating toggle
+
+# Fullscreen toggle
+bindsym $mod+f fullscreen toggle
+
+
+bar {
+    status_command i3status
+    colors {
+        background #0B132B
+        statusline #DBE9EE
+        separator  #3A506B
+
+        focused_workspace  #DBE9EE #3A506B #0B132B
+        active_workspace   #DEB9EE #3A506B #0B132B
+        inactive_workspace #C0D6DF #0B132B #0B132B
+        urgent_workspace   #DE6E6E #0B132B #FFFFFF
+    }
+}
