@@ -25,7 +25,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+d exec dmenu_run
 
 # Close focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # Reload and restart i3
 bindsym $mod+Shift+c reload
