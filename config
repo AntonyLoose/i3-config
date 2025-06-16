@@ -1,5 +1,3 @@
-# Made with gen AI
-
 exec_always --no-startup-id picom
 exec_always --no-startup-id feh --bg-scale ~/wallpapers/main.jpg
 
@@ -33,6 +31,10 @@ bindsym $mod+Shift+r restart
 
 # Exit i3
 bindsym $mod+Shift+e exec "i3-msg exit"
+
+# Brightness
+bindsym $mod+equal exec --no-startup-id brightnessctl set +5%
+bindsym $mod+minus exec --no-startup-id brightnessctl set 5%-
 
 # Nvimesc-style navigation: use hjkl to move focus between windows
 bindsym $mod+h focus left
