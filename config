@@ -36,6 +36,10 @@ bindsym $mod+Shift+e exec "i3-msg exit"
 bindsym $mod+equal exec --no-startup-id brightnessctl set +5%
 bindsym $mod+minus exec --no-startup-id brightnessctl set 5%-
 
+# Volume
+bindsym $mod+Shift+equal exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym $mod+Shift+minus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+
 # Nvimesc-style navigation: use hjkl to move focus between windows
 bindsym $mod+h focus left
 bindsym $mod+j focus down
