@@ -89,13 +89,13 @@ bindsym $mod+f fullscreen toggle
 bar {
     status_command i3status
     colors {
-        background #0B132B
+        background #171B21
         statusline #DBE9EE
         separator  #3A506B
 
-        focused_workspace  #DBE9EE #3A506B #0B132B
-        active_workspace   #DEB9EE #3A506B #0B132B
-        inactive_workspace #C0D6DF #0B132B #0B132B
-        urgent_workspace   #DE6E6E #0B132B #FFFFFF
+        focused_workspace  #171B21 #3A506B #EDEDED
+        active_workspace   #171B21 #3A506B #EDEDED
+        inactive_workspace #171B21 #0B132B #898989
+        urgent_workspace   #171B21 #0B132B #EDEDED
     }
 }
