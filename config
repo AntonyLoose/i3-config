@@ -1,5 +1,5 @@
 exec_always --no-startup-id picom
-exec_always --no-startup-id feh --bg-scale ~/.config/i3/wallpapers/main.jpg
+exec_always --no-startup-id feh --bg-scale --no-xinerama ~/.config/i3/wallpapers/main.jpg
 
 # Set mod key to Mod4 (Windows key)
 set $mod Mod4
@@ -39,6 +39,12 @@ bindsym $mod+minus exec --no-startup-id brightnessctl set 5%-
 # Volume
 bindsym $mod+Shift+equal exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym $mod+Shift+minus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+# External Display
+bindsym $mod+Shift+w exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --pos 0x-1080 --primary --output eDP-1 --mode 1366x768 --pos 0x0
+bindsym $mod+Shift+s exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --pos 0x768 --primary --output eDP-1 --mode 1366x768 --pos 0x0
+bindsym $mod+Shift+d exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --pos 1366x0 --primary --output eDP-1 --mode 1366x768 --pos 0x0
+bindsym $mod+Shift+a exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --pos -1920x0 --primary --output eDP-1 --mode 1366x768 --pos 0x0
 
 # Nvimesc-style navigation: use hjkl to move focus between windows
 bindsym $mod+h focus left
