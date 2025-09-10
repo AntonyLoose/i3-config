@@ -46,6 +46,9 @@ bindsym $mod+Shift+s exec --no-startup-id xrandr --output HDMI-1 --mode 1920x108
 bindsym $mod+Shift+d exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --pos 1366x0 --primary --output eDP-1 --mode 1366x768 --pos 0x0
 bindsym $mod+Shift+a exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --pos -1920x0 --primary --output eDP-1 --mode 1366x768 --pos 0x0
 
+# Lock Screen
+bindsym $mod+Shift+z exec i3lock -c 000000
+
 # Nvimesc-style navigation: use hjkl to move focus between windows
 bindsym $mod+h focus left
 bindsym $mod+j focus down
