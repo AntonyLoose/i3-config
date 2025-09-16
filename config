@@ -40,6 +40,10 @@ bindsym $mod+minus exec --no-startup-id brightnessctl set 5%-
 bindsym $mod+Shift+equal exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym $mod+Shift+minus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 
+# Speaker output
+bindsym $mod+Shift+1 exec --no-startup-id pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo
+bindsym $mod+Shift+2 exec --no-startup-id pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo
+
 # External Display
 bindsym $mod+Shift+w exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --pos 0x-1080 --primary --output eDP-1 --mode 1366x768 --pos 0x0
 bindsym $mod+Shift+s exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --pos 0x768 --primary --output eDP-1 --mode 1366x768 --pos 0x0
